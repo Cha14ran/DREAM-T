@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="">
+    <meta charset="UTF-8">
+    <title>Sentences_annotation</title>
+    <style>
+        body {background-color: powderblue;}
+    </style>
+    <script>
+    function addoptions(arg_index){
+        id_invalid='invalid'+arg_index;
+        class_sent='sentiment'+arg_index;
+        class_emotion='emotion'+arg_index;
+        class_hatespeech='hatespeech'+arg_index;
+        class_clickbait='clickbait'+arg_index;
+        class_sarcasm='sarcasm'+arg_index;
+        var my_sen=document.querySelector("."+class_sent);
+        var my_emo=document.querySelector("."+class_emotion);
+        var my_hat=document.querySelector("."+class_hatespeech);
+        var my_cli=document.querySelector("."+class_clickbait);
+        var my_sar=document.querySelector("."+class_sarcasm);
+        var my_invalid=document.getElementById(id_invalid);
+        if(!my_invalid.checked){
+            none_class=".None"+arg_index;
+            var my_none=document.querySelectorAll(none_class);
+            my_none.forEach(x=>x.remove());
+            return
+        }
+
+        var arr=[];
+        names=["sentiment_option","emotion_option","hatespeech_option","clickbait_option","sarcasm_option"];
+        for(var k=0;k<5;k=k+1){
+            var radio_box=document.createElement('input');
+            var label_box=document.createElement('div');
+            radio_box.classList.add("None"+arg_index);
+            label_box.innerText='None';
+            label_box.classList.add("None"+arg_index);
+            radio_box.type="radio";
+            radio_box.value="None";
+            radio_box.checked="checked";
+            radio_box.name=names[k]+arg_index;
+            {#names[k]=names[k]+arg_index;#}
+            arr.push([radio_box,label_box]);
+            {#arr.append([radio_box,label_box]);#}
+        }
+        {#radio_box.name=names[0];#}
+        my_sen.appendChild(arr[0][0]);
+        my_sen.appendChild(arr[0][1]);
+        {#radio_box.name=names[1];#}
+        my_emo.appendChild(arr[1][0]);
+        my_emo.appendChild(arr[1][1]);
+        {#radio_box.name=names[2];#}
+        my_hat.appendChild(arr[2][0]);
+        my_hat.appendChild(arr[2][1]);
+        {#radio_box.name=names[3];#}
+        my_cli.appendChild(arr[3][0]);
+        my_cli.appendChild(arr[3][1]);
+        {#radio_box.name=names[4];#}
+        my_sar.appendChild(arr[4][0]);
+        my_sar.appendChild(arr[4][1]);
+    }
+</script>
+</head>
+
+<body>
+<a href="/logout">Logout</a>
+<p>{{ 'Number of remaining sentences are ' }}{{ num_rem }}</p>
+<br>
+<form method="POST" action="">
+    {{ username }}
+{#    <input type="checkbox" name="stop_here" value="stop">{{ "Stop Here,I can't do any more and I will submit now" }}#}
+    <br>
+    {% for l in list_sentences %}
+        <div>
+            <h1>{{ l['key_value'] }}{{ ")" }}{{ l['sentence'] }}</h1>
+            {% set i = loop.index %}
+            <input type="hidden" name={{ "sentence_name" + i|string}} value="{{ l['sentence'] }}">
+            <input type="checkbox" id="invalid{{ loop.index }}" onchange="addoptions({{ loop.index }})">Invalid</input>
+            <div class="sentiment{{ loop.index }}">
+            <h3>Sentiment
+                    {% for p in l['Sentiment'] %}
+                        <input type="radio" name={{ "sentiment_option" + i|string }} value="{{ p }}" required>{{ p }}
+                    {% endfor %}
+            </h3>
+            </div>
+            <div class="emotion{{ loop.index }}">
+            <h3>Emotion
+                   {% for p in l['Emotion'] %}
+                        <input type="radio" name={{ "emotion_option" + i|string }} value="{{ p }}" required>{{ p }}
+                   {% endfor %}
+                    <input type="text" name={{ "text_data" + i|string }}>
+            </h3>
+            </div>
+            <div class="hatespeech{{ loop.index }}">
+            <h3>Hate speech
+                    {% for p in l['Hatespeech'] %}
+                        <input type="radio" name={{ "hatespeech_option" + i|string }} value="{{ p }}" required>{{ p }}
+                    {% endfor %}
+            </h3>
+            </div>
+            <div class="clickbait{{ loop.index }}">
+            <h3>Clickbait
+                    {% for p in l['Clickbait'] %}
+                        <input type="radio" name={{ "clickbait_option" + i|string }} value="{{ p }}" required>{{ p }}
+                    {% endfor %}
+            </h3>
+            </div>
+            <div class="sarcasm{{ loop.index }}">
+            <h3>Sarcasm
+                    {% for p in l['Sarcasm'] %}
+                        <input type="radio" name={{ "sarcasm_option" + i|string }} value="{{ p }}" required>{{ p }}
+                    {% endfor %}
+            </h3>
+            </div>
+        </div>
+    {% endfor %}
+    <input type="hidden" name="length_sentences" value="{{list_sentences|length}}">
+    <button type="submit">Submit options</button>
+</form>
+
+</body>
+</html>

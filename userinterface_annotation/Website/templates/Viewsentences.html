@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentences_annotation</title>
+    <style>
+        body {background-color: powderblue;}
+    </style>
+    <script>
+    function addoptions(arg_index){
+        id_invalid='invalid'+arg_index;
+        class_sent='sentiment'+arg_index;
+        class_emotion='emotion'+arg_index;
+        class_hatespeech='hatespeech'+arg_index;
+        class_clickbait='clickbait'+arg_index;
+        class_sarcasm='sarcasm'+arg_index;
+        var my_sen=document.querySelector("."+class_sent);
+        var my_emo=document.querySelector("."+class_emotion);
+        var my_hat=document.querySelector("."+class_hatespeech);
+        var my_cli=document.querySelector("."+class_clickbait);
+        var my_sar=document.querySelector("."+class_sarcasm);
+        var my_invalid=document.getElementById(id_invalid);
+        if(!my_invalid.checked){
+            none_class=".None"+arg_index;
+            var my_none=document.querySelectorAll(none_class);
+            my_none.forEach(x=>x.remove());
+            return
+        }
+        {#var checkbox=document.createElement('input');#}
+        {#var label=document.createTextNode('None');#}
+        for(i=0;i<5;i++){
+            if(i===0){
+                var checkbox0=document.createElement('input');
+                var label0=document.createElement('div');
+                checkbox0.name='sentiment_option';
+                checkbox0.classList.add("None"+arg_index);
+                label0.innerText='None';
+                label0.classList.add("None"+arg_index);
+                checkbox0.type="checkbox";
+                checkbox0.value="None";
+                checkbox0.checked="checked";
+                my_sen.appendChild(checkbox0);
+                my_sen.appendChild(label0);
+            }
+            else if(i===1){
+                var checkbox1=document.createElement('input');
+                var label1=document.createElement('div');
+                checkbox1.name='emotion_option';
+                checkbox1.classList.add("None"+arg_index);
+                checkbox1.type="checkbox";
+                checkbox1.value="None";
+                checkbox1.checked="checked";
+                label1.innerText='None';
+                label1.classList.add("None"+arg_index);
+                my_emo.appendChild(checkbox1);
+                my_emo.appendChild(label1);
+            }
+            else if(i===2){
+                var checkbox2=document.createElement('input');
+                var label2=document.createElement('div');
+                checkbox2.classList.add("None"+arg_index);
+                checkbox2.name='hatespeech_option';
+                checkbox2.type="checkbox";
+                checkbox2.value="None";
+                checkbox2.checked="checked";
+                label2.classList.add("None"+arg_index);
+                my_hat.appendChild(checkbox2);
+                my_hat.appendChild(label2);
+            }
+            else if(i===3){
+                var checkbox3=document.createElement('input');
+                var label3=document.createElement('div');
+                checkbox3.classList.add("None"+arg_index);
+                checkbox3.name='clickbait_option';
+                checkbox3.type="checkbox";
+                checkbox3.value="None";
+                checkbox3.checked="checked";
+                label3.classList.add("None"+arg_index);
+                my_cli.appendChild(checkbox3);
+                my_cli.appendChild(label3);
+            }
+            else if(i===4){
+                var checkbox4=document.createElement('input');
+                var label4=document.createElement('div');
+                label4.classList.add("None"+arg_index);
+                checkbox4.type="checkbox";
+                checkbox4.value="None";
+                checkbox4.checked="checked";
+                 checkbox4.classList.add("None"+arg_index);
+                checkbox4.name='sarcasm_option';
+                my_sar.appendChild(checkbox4);
+                my_sar.appendChild(label4);
+            }
+        }
+    }
+</script>
+</head>
+
+<body>
+<form method="POST" action="{{ url_for('final_results') }}">
+    <input type="checkbox" name="stop_here" value="stop">{{ "Stop Here,I can't do any more and I will submit now" }}
+    <br>
+    {% for l in list_sentences %}
+        <div>
+            <h1>{{ l['sentence'] }}</h1>
+            <input type="checkbox" id="invalid{{ loop.index }}" onchange="addoptions({{ loop.index }})">Invalid</input>
+            <div class="sentiment{{ loop.index }}">
+            <h3>Sentiment
+                    {% for p in l['Sentiment'] %}
+                        <input type="checkbox" name="sentiment_option" value="{{ p }}" >{{ p }}
+                    {% endfor %}
+            </h3>
+            </div>
+            <div class="emotion{{ loop.index }}">
+            <h3>Emotion
+                   {% for p in l['Emotion'] %}
+                        <input type="checkbox" name="emotion_option" value="{{ p }}" >{{ p }}
+                   {% endfor %}
+                    <input type="text" name="text_data">
+            </h3>
+            </div>
+            <div class="hatespeech{{ loop.index }}">
+            <h3>Hate speech
+                    {% for p in l['Hatespeech'] %}
+                        <input type="checkbox" name="hatespeech_option" value="{{ p }}">{{ p }}
+                    {% endfor %}
+            </h3>
+            </div>
+            <div class="clickbait{{ loop.index }}">
+            <h3>Clickbait
+                    {% for p in l['Clickbait'] %}
+                        <input type="checkbox" name="clickbait_option" value="{{ p }}">{{ p }}
+                    {% endfor %}
+            </h3>
+            </div>
+            <div class="sarcasm{{ loop.index }}">
+            <h3>Sarcasm
+                    {% for p in l['Sarcasm'] %}
+                        <input type="checkbox" name="sarcasm_option" value="{{ p }}">{{ p }}
+                    {% endfor %}
+            </h3>
+            </div>
+        </div>
+    {% endfor %}
+
+    <button type="submit">Submit options</button>
+</form>
+
+</body>
+</html>

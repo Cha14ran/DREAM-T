@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GenreSelection</title>
+    <style>
+body {background-color: powderblue;}
+</style>
+</head>
+<body>
+<div>
+<form method="POST" action="{{ url_for('select_files') }}">
+    <p>Select one Genre from</p>
+    <p>{{ genre_folders[0] }}  </p>
+     <select name="genre_selection">
+        {% for lis in genre_folders[1:] %}
+            {% for tvalue in lis %}
+                {% if selected_tvalue == tvalue %}
+                    <option value="{{ tvalue }}" selected='selected'>{{ tvalue }}</option>
+                {% else %}
+                     <option value="{{ tvalue }}" >{{ tvalue }}</option>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </select>
+    <button type="submit">Go</button>
+</form>
+</div>
+
+</body>
+</html>

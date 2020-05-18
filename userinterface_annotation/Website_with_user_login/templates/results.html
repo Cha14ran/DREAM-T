@@ -1,0 +1,18 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Annotated_files</title>#}
+{#</head>#}
+{% extends "header.html" %}
+{% block body %}
+
+<body>
+{#{{ table }}#}
+{% for table in tables %}
+{#            {{titles[loop.index]}}#}
+            {{ table|safe }}
+{% endfor %}
+</body>
+{#</html>#}
+{% endblock %}

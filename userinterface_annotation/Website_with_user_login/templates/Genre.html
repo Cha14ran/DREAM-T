@@ -1,0 +1,52 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>GenreSelection</title>#}
+{#    <style>#}
+{#body {background-color: powderblue;}#}
+{#</style>#}
+{#</head>#}
+{#<body>#}
+{#<div>#}
+{%  extends "header.html" %}
+{%  block body %}
+<br>
+<p>Select one Genre from</p>
+    <p>{{ genre_folders[0] }}</p>
+{% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}
+{% endif %}
+<ul>
+{% for lis in genre_folders[1:] %}
+    {% for tvalue in lis %}
+        <li><a href="{{ tvalue }}">{{ tvalue }}</a></li>
+{% endfor %}
+{% endfor %}
+</ul>
+{#<form method="POST" action="{{ url_for('file_url',username=genre_folders[0]) }}" id="1">#}
+{#// {#<form method="POST" action="{{ url_for('file',username=genre_folders[0],genre=request.form.get('genre_selection')) }}">#}
+{#    <p>Select one Genre from</p>#}
+{#    {% if error %}#}
+{#        <p class="error"><strong>Error:</strong> {{ error }}#}
+{#    {% endif %}#}
+{#    <p>{{ genre_folders[0] }}  </p>#}
+{#     <select name="genre_selection" id="sel_g">#}
+{#        {% for lis in genre_folders[1:] %}#}
+{#            {% for tvalue in lis %}#}
+{#                {% if selected_tvalue == tvalue %}#}
+{#                    <option value="{{ tvalue }}" selected='selected'>{{ tvalue }}</option>#}
+{#                {% else %}#}
+{#                     <option value="{{ tvalue }}" >{{ tvalue }}</option>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#        {% endfor %}#}
+{#    </select>#}
+{#    <button type="submit">Go</button>#}
+{#</form>#}
+
+{% endblock %}
+{#</div>#}
+{##}
+{#</body>#}
+{#</html>#}

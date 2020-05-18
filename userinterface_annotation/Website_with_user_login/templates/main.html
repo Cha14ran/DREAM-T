@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="">
+<title>Annotation</title>
+<meta charset="UTF-8">
+<style>
+body {background-color: powderblue;}
+</style>
+</head>
+<body>
+{{ 'Hello Welcome' }}
+<div>
+{% if error %}
+    {{ error }}
+{% endif %}
+</div>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismiss" role="alert" style="margin-top: 3px;" id="flash_mess">
+            <button type="button"  aria-Label="Close" onclick="disappear()"><span>&times;</span></button>
+                {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div>
+    <form action="" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <input class="btn btn-default" type="submit" value="Login">
+    </form>
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+
+</div>
+<script>
+    function disappear() {
+        var ex=document.getElementById("flash_mess");
+        ex.remove()
+    }
+</script>
+
+</body>
+</html>
+
+{#<form action="{{ url_for('select_genre') }}" method="POST">#}
+{#    <p>Select one Folder</p>#}
+{#    <select name="comp_select">#}
+{#        {% for direc in folders %}#}
+{#        <option value="{{ comp_select }}">{{ direc }}</option>#}
+{#        {% endfor %}#}
+{#    </select>#}
+{#    <select name="folder_selection">#}
+{#        {% for tvalue in folders %}#}
+{#            {% if selected_tvalue == tvalue %}#}
+{#                <option value="{{ tvalue }}" selected='selected'>{{ tvalue }}</option>#}
+{#            {% else %}#}
+{#                 <option value="{{ tvalue }}" >{{ tvalue }}</option>#}
+{#            {% endif %}#}
+{#        {% endfor %}#}
+{#    </select>#}
+{#    <button type="submit">Go</button>#}
+{#</form>#}

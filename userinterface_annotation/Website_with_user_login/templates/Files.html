@@ -1,0 +1,56 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#    <style>#}
+{#        body {background-color: powderblue;}#}
+{#    </style>#}
+{#</head>#}
+{#<body>#}
+{%  extends "header.html" %}
+{%  block body %}
+
+{#<form method="POST" action="{{ url_for('viewsen_url',username=listoffiles[0],genre=listoffiles[1]) }}" id="form_1">#}
+{#<form method="GET" action="" id="form_1">#}
+{#    <p>Select Files from </p>#}
+{#    <p>{{ listoffiles[0] }}{{ '/' }}{{ listoffiles[1] }}</p>#}
+{#     <select name="file_selection" id="sel_f" onchange="send_request()">#}
+{#        {% for lis in listoffiles[2:] %}#}
+{#            {% for tvalue in lis %}#}
+{#                {% if selected_tvalue == tvalue %}#}
+{#                    <option value="{{ tvalue }}" selected='selected'>{{ tvalue }}</option>#}
+{#                {% else %}#}
+{#                     <option value="{{ tvalue }}" >{{ tvalue }}</option>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#        {% endfor %}#}
+{#    </select>#}
+{#    <button type="submit">Go</button>#}
+{#</form>#}
+<ul>
+    {% for lis in listoffiles[2:] %}
+        {% for tvalue in lis %}
+            <li><a href="{{ tvalue }}">{{ tvalue }}</a></li>
+    {% endfor %}
+    {% endfor %}
+</ul>
+{#<script>#}
+{##}
+{#    function send_request() {#}
+{#        var username="{{ listoffiles[0] }}";#}
+{#        var genre="{{ listoffiles[1] }}";#}
+{#        var ex=document.getElementById("sel_f");#}
+        {#var select_f=ex.selected();#}
+{#        var select_f=ex.options[ex.selectedIndex].value;#}
+{#        console.log(select_f);#}
+{#        link='/'+username+'/'+genre+'/'+select_f;#}
+{#        console.log(link);#}
+{#        document.getElementById("form_1").action=link;#}
+{#        return;#}
+{#    }#}
+{#    send_request()#}
+{#</script>#}
+{% endblock %}
+{#</body>#}
+{#</html>#}

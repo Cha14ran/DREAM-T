@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Annotation_WebPage</title>
+    <style>
+    body {background-color: powderblue;}
+    </style>
+</head>
+<body>
+<a href="/logout">Logout</a>
+<div>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismiss" role="alert" style="margin-top: 3px;">
+            <button type="button" class="close" data-dismiss="alert" aria-Label="Close"><span>&times;</span></button>
+                {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% block body %}{% endblock %}
+</div>
+</body>
+</html>

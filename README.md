@@ -1,9 +1,8 @@
 # Dream-T!
 
 <details>
-<summary></summary>
-
-## Word Embeddings	
+<summary>Word Embeddings</summary>
+	
 * [Lexicon Based](#lexicon-based)
 * [BOW](#bow)
 * [TF-IDF](#tf-idf)

@@ -32,7 +32,7 @@ glove_model = gensim.models.KeyedVectors.load_word2vec_format('./te_glove_w2v.tx
 fastText_model = gensim.models.KeyedVectors.load_word2vec_format('./te_fasttext.vec', binary=False)
 
 ### Meta-Embeddings
-MetaEmbeddings_model = gensim.models.KeyedVectors.load_word2vec_format('./result_metaEmbeddings.txt', binary=False)
+MetaEmbeddings_model = gensim.models.KeyedVectors.load_word2vec_format('./te_metaEmbeddings.txt', binary=False)
 
 ### ELMo
 

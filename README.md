@@ -23,6 +23,7 @@
 
 ### Word2Vec
 import gensim
+
 w2vmodel = gensim.models.KeyedVectors.load_word2vec_format('/home/mounika/Desktop/TALLIP_journal/te_w2v.vec', binary=False)
 ### GloVe
 

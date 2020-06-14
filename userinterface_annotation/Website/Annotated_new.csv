@@ -1,9 +1,0 @@
-
-Sentence,sentiment,emotion,hatespeech,clickbait,sarcasm,textbox
-తన కెరీర్ ముగింపులో ఓ వైవిధ్యమైన సినిమా అందించాలని సంకల్పించారు దర్శకేంద్రుడు రాఘవేంద్రరావు.,pos,sad,no,no,no,
-ఇటీవలే ఈ మేరకు ఓ పోస్టర్ వదిలారు.,neg,sad,no,no,no,
-ముగ్గురు హీరోయిన్లు.,neg,sad,no,no,no,
-ముగ్గురు డైరక్టర్లు.,neg,sad,no,no,no,
-ఓ హీరో అంటూ.,neg,sad,no,no,no,
-Sentence,sentiment,emotion,hatespeech,clickbait,sarcasm,textbox
-ముగ్గురు హీరోయిన్ లతో ఒక హీరోతో సినిమా తీయడం రాఘవేంద్రరావుకు కొత్త ఏమీ కాదు.,neg,sad,no,no,no,

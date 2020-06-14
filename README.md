@@ -25,6 +25,19 @@
 </details>
 
 
+<details>
+	<summary> Box-Plots </summary>
+	
+* Different cells has been created in "Boxplots.ipynb" file for Sentiment Analysis,Emotion-Identification,Hate-Speech Detection,Sarcasm Detection 
+
+</details>
+<details>
+	<summary> P-values </summary>
+	
+* Different cells has been created in "p-values.ipynb" file for Sentiment Analysis,Emotion-Identification,Hate-Speech Detection,Sarcasm Detection
+* Assumptions were also checked to perform ANOVA test. 
+
+</details>
 
 ## Lexicon Based
 

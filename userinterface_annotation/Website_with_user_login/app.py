@@ -9,7 +9,7 @@ from functools import wraps
 
 
 
-url_path = '/home/chinni/PycharmProjects/Honours/userinterface_annotation/Project/'
+url_path = '../Project/'
 app = Flask(__name__)
 app.secret_key = "charan"
 list_genres = []

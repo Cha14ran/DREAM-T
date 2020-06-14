@@ -14,6 +14,16 @@
 * [BERT](#bert)
 </details>
 
+<details>
+<summary>User Interface for Annotation</summary>
+
+## How to run
+* Download entire folder userinterface_annotation
+* Go to /Website_with_user_login 
+* "python3 app.py" command to run the file.
+
+</details>
+
 
 
 ## Lexicon Based

@@ -8,9 +8,10 @@
 * [TF-IDF](#tf-idf)
 * [Word2Vec](#word2vec)
 * [GloVe](#glove)
+* [FastText](#fasttext)
+* [Meta-Embeddings](#meta-embeddings)
 * [ELMo](#elmo)
 * [BERT](#bert)
-
 </details>
 
 

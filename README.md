@@ -55,7 +55,7 @@
 #### Code Snippet for GloVe Model
 	import gensim
 	glove_model = gensim.models.KeyedVectors.load_word2vec_format('./te_glove_w2v.txt', binary=False)
-* "te_glove_w2v.txt" file can be downloaded from " "
+* "te_glove_w2v.txt" file can be downloaded from "https://iiitaphyd-my.sharepoint.com/:t:/g/personal/mounika_marreddy_research_iiit_ac_in/EbHxf6es829NsM7dToOMpWoB2vTh1RiXGzK6mRc5cKDH5A?e=4%3aiA4wkV&at=9"
 
 ## FastText
 #### Code Snippet for FastText Model
@@ -91,7 +91,8 @@
 	elmo_features = np.mean(elmo.embed_sentence(tk.tokenize(wx_sentence))[2],axis=0)
 
 * "allennlp" module can be downloaded from "https://github.com/allenai/allennlp"
-* "options.json" and "elmo_weights.hdf5" files is in ELMo folder
+* "elmo_weights.hdf5" file can be downloaded from "https://iiitaphyd-my.sharepoint.com/:u:/g/personal/mounika_marreddy_research_iiit_ac_in/EXycd38SGhRLs5y8hBws9PMB9mvkCAzWhlwBo8k7LqbMUA?e=NbAfoc"
+* "options.json" file can be downloaded from " "
 * "wxconv" module can be downloaded from "https://github.com/irshadbhat/indic-wx-converter"
 * "polyglot_tokenizer" module can be downloaded from "https://github.com/ltrc/polyglot-tokenizer"
 

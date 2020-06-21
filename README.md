@@ -55,7 +55,7 @@
 #### Code Snippet for GloVe Model
 	import gensim
 	glove_model = gensim.models.KeyedVectors.load_word2vec_format('./te_glove_w2v.txt', binary=False)
-* "te_glove_w2v.txt" file can be downloaded from "https://iiitaphyd-my.sharepoint.com/:t:/g/personal/mounika_marreddy_research_iiit_ac_in/EbHxf6es829NsM7dToOMpWoB2vTh1RiXGzK6mRc5cKDH5A?e=4%3aiA4wkV&at=9"
+* "te_glove_w2v.txt" file can be downloaded from "https://iiitaphyd-my.sharepoint.com/:t:/g/personal/mounika_marreddy_research_iiit_ac_in/EQGA3JvxTAtFpbF3CQEOI9wBDiBY6xCm3d6Q4Tk3ByZgmw?e=7JtrK1"
 
 ## FastText
 #### Code Snippet for FastText Model

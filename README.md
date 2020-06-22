@@ -67,7 +67,7 @@
 #### Code Snippet for Meta-Embeddings Model
 	import gensim
 	MetaEmbeddings_model = gensim.models.KeyedVectors.load_word2vec_format('./te_metaEmbeddings.txt', binary=False)
-* "te_metaEmbeddings.txt" file can be downloaded from "" 
+* "te_metaEmbeddings.txt" file can be downloaded from "https://iiitaphyd-my.sharepoint.com/:t:/g/personal/mounika_marreddy_research_iiit_ac_in/ERLGiaMiJiFDu3UwBD8YxUwBMB_aiGrRUHJXUrkKlN3Brw?e=BgocBA" 
 
 ## ELMo
 

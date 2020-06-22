@@ -61,7 +61,7 @@
 #### Code Snippet for FastText Model
 	import gensim
 	fastText_model = gensim.models.KeyedVectors.load_word2vec_format('./te_fasttext.vec', binary=False)
-* "te_fasttext.vec" file can be downloaded from " "
+* "te_fasttext.vec" file can be downloaded from "https://iiitaphyd-my.sharepoint.com/:u:/g/personal/mounika_marreddy_research_iiit_ac_in/Ee6vQf9XLi9IroEpqaeqfbwB7_be-kS6nj69BTPhBu6LTw?e=udghNS"
 
 ## Meta-Embeddings
 #### Code Snippet for Meta-Embeddings Model

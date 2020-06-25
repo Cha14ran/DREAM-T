@@ -71,7 +71,10 @@
 
 ## Skip-Thought 
 #### Code Snippet for Skip-Thought Model
-	VOCAB_FILE = "./data/exp_vocab/vocab.txt"                                                                                                                           EMBEDDING_MATRIX_FILE = "./data/exp_vocab/embeddings.npy"                                                                                                           CHECKPOINT_PATH = "./data/model/model.ckpt-129597"                                                                                                                 encoder = encoder_manager.EncoderManager()
+	VOCAB_FILE = "./data/exp_vocab/vocab.txt"
+	EMBEDDING_MATRIX_FILE = "./data/exp_vocab/embeddings.npy"
+	CHECKPOINT_PATH = "./data/model/model.ckpt-129597"
+	encoder = encoder_manager.EncoderManager()
 	encoder.load_model(configuration.model_config(),
                     vocabulary_file=VOCAB_FILE,
                     embedding_matrix_file=EMBEDDING_MATRIX_FILE,

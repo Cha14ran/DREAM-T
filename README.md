@@ -69,6 +69,15 @@
 	MetaEmbeddings_model = gensim.models.KeyedVectors.load_word2vec_format('./te_metaEmbeddings.txt', binary=False)
 * "te_metaEmbeddings.txt" file can be downloaded from "https://iiitaphyd-my.sharepoint.com/:t:/g/personal/mounika_marreddy_research_iiit_ac_in/ERLGiaMiJiFDu3UwBD8YxUwBMB_aiGrRUHJXUrkKlN3Brw?e=BgocBA" 
 
+## Skip-Thought 
+#### Code Snippet for Skip-Thought Model
+	VOCAB_FILE = "./data/exp_vocab/vocab.txt"                                                                                                                           EMBEDDING_MATRIX_FILE = "./data/exp_vocab/embeddings.npy"                                                                                                           CHECKPOINT_PATH = "./data/model/model.ckpt-129597"                                                                                                                 encoder = encoder_manager.EncoderManager()
+	encoder.load_model(configuration.model_config(),
+                    vocabulary_file=VOCAB_FILE,
+                    embedding_matrix_file=EMBEDDING_MATRIX_FILE,
+                    checkpoint_path=CHECKPOINT_PATH)
+	encodings = encoder.encode(data)
+
 ## ELMo
 
 #### Code-Snippet for Elmo Features:

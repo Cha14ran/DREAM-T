@@ -1,5 +1,14 @@
 # Dream-T!
 
+## Data
+* Each row/sentence contains the sentence text, and respective "sentiment", "emotion", "hatespeech", "sarcasm" labels.
+* The labels mentioned in each row of the csv file, goes in the same order:sentiment, emotion, hatespeech, sarcasm 
+* Labels for sentiment: "Pos", "Neg", "Neutral" 
+* Labels for Emotion: "Happy", "Sad", "Angry", "Fear"
+* Labels for Hatespeech: "Yes", "No" 
+* Labels for Sarcasm: "Yes", "No"
+
+
 <details>
 <summary>Word Embeddings</summary>
 	

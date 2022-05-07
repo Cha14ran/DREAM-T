@@ -150,4 +150,4 @@
 	sen_vec = show_head_view(model, tokenizer, sentence_a, sentence_b)
 
 * "transformers" module can be downloaded from "https://huggingface.co/transformers/"
-* "bertviz" module can be downloaded from ""
+* "bertviz" module can be downloaded from "https://pypi.org/project/bertviz/"
